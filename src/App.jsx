@@ -68,7 +68,7 @@ export const App = () => {
         <button
           type="button"
           className={`button is-warning ${isReversed ? '' : 'is-light'}`}
-          onClick={() => setIsReversed(true)}
+          onClick={() => setIsReversed(prev => !prev)}
         >
           Reverse
         </button>
@@ -79,7 +79,7 @@ export const App = () => {
             className="button is-danger is-light"
             onClick={() => {
               setSortField('');
-              setIsReversed(prev => !prev);
+              setIsReversed(false);
             }}
           >
             Reset
